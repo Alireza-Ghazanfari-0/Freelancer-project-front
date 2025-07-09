@@ -4,6 +4,7 @@ import useCategories from "./useCategories";
 import Loader from "../../ui/Loader";
 import { MdDeleteForever } from "react-icons/md";
 import Modal from "../../ui/Modal";
+import toast from "react-hot-toast";
 
 function CategoriesTable() {
   const { isLoading, categories, error, isError } = useCategories();
