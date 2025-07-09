@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SendOTP from "./SendOTP";
-import CheckOTP from "./CheckOtp";
+import CheckOTP from "./CheckOTP";
 import DarkToggle from "../../ui/DarkToggle";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
