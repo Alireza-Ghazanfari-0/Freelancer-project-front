@@ -4,6 +4,7 @@ import { PiProjectorScreenLight } from "react-icons/pi";
 import { FcAcceptDatabase } from "react-icons/fc";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import Loader from "../ui/Loader";
+import toast from "react-hot-toast";
 
 function FreelancerDashboard() {
   const { isLoading, proposals, isError, error } = useProposals();
