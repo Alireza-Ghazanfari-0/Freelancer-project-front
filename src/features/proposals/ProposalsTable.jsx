@@ -5,6 +5,7 @@ import textSummarizer from "../../utilities/textSummarizer";
 import currencyInterfaceChanger from "../../utilities/currencyInterfaceChanger";
 import { PiEmptyBold } from "react-icons/pi";
 import { TbMoodEmpty } from "react-icons/tb";
+import toast from "react-hot-toast";
 
 function ProposalsTable() {
   const { isLoading, proposals, isError, error } = useProposals();
