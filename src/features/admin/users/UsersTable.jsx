@@ -4,6 +4,7 @@ import Loader from "../../../ui/Loader";
 import { MdOutlineEditNote } from "react-icons/md";
 import Modal from "../../../ui/Modal";
 import ChangeUserStatus from "./ChangeUserStatus";
+import toast from "react-hot-toast";
 
 function UsersTable() {
   const { isLoading, users, isError, error } = useUsers();
