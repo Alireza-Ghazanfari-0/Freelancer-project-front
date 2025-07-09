@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const address = axios.create({
-  baseURL: "http://localhost:5000/api",
+  // baseURL: "http://localhost:5000/api",
+  baseURL: "https://freelancer-project-backend-87md.onrender.com/api",
   withCredentials: true,
 });
 
