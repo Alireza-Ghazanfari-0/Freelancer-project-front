@@ -1,5 +1,5 @@
 import React from "react";
-import UsersTable from "../features/admin/users/usersTable";
+import UsersTable from "../features/admin/users/UsersTable";
 
 function AdminUsers() {
   return (
