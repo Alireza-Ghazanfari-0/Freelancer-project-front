@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DarkToggle from "../../ui/DarkToggle";
 import { useForm } from "react-hook-form";
-import TextInputField from "../../ui/textInputField";
+import TextInputField from "../../ui/TextInputField";
 import RadioInput from "../../ui/RadioInput";
 import { ImInfo } from "react-icons/im";
 import { useMutation } from "@tanstack/react-query";
