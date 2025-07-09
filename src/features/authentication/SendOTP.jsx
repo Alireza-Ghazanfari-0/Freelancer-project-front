@@ -1,6 +1,6 @@
 import React from "react";
 import Loader from "../../ui/Loader";
-import TextInputField from "../../ui/textInputField";
+import TextInputField from "../../ui/TextInputField";
 
 function SendOTP({ onSubmit, register, errors, isSendingPhoneNumber }) {
   return (
