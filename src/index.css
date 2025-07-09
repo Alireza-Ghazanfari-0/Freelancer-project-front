@@ -1,0 +1,443 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+/* comment++++ dark mode is active at 2 states: both dark at inlines css and at a class in css file */
+/* @import "tailwindcss/preflight"; */
+/* @tailwind utilities; */
+/* body {
+  margin: 0;
+  padding: 0;
+   display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh; 
+} */
+
+@theme {
+  --color-loader: #50c1ba;
+  --color-midnight: #121063;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+  --color-sidebar: #bae4ea;
+  --color-sidebar-text: #1e3a4a; /* آبی تیره */
+  --color-sidebar-hover: #86c9d6; /* هاور ملایم */
+  --color-panel-highlight: #e0f2fe; /* آبی خیلی روشن | معادل blue-100 در Tailwind */
+  --color-toggle-button: #10b981; /* آبی متوسط – قابل توجه */
+  --color-stat-card: #fef08a;
+  --color-stat-title: #92400e;
+  --color-stat-value: #1e293b;
+  --color-bg: #f0f3f5;
+  --color-text: #1f2937;
+  --color-new-bg: #e6f5f6;
+  --color-otp-background: #dcf7f6;
+  --color-otp: #c9cfc4;
+  --color-otp-label: #1a1c1c;
+  --color-otp-input: #f5efe6;
+  --color-otp-input-text: #022b29;
+  --color-otp-button: #f79e31;
+  --color-otp-button-text: #211404;
+  --color-otp-input-focus: #0f7567;
+  --color-btn-default: #c5cae6;
+  --color-otp-note: #2857b8;
+  --color-completion-window: #94c2c4;
+  --color-completion-btn: #0e5c69;
+  --color-completion-btn-text: #e0f2f1;
+  --color-completion-title: #63102f;
+  --color-menu-top: #1dadbf;
+  --color-primary: #0ea5e9;
+  --color-primary-light: #e0f7ff;
+  --color-secondary: #6366f1;
+  --color-surface: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-error: #dc2626;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-muted: #9ca3af;
+  --color-hover: #f0f9ff;
+  --color-hover-dark: #1e40af;
+  --color-input-bg: #f9fafb;
+  --color-li-bg-hover: #e5efff;
+  --color-li-bg-dark-hover: #1e3a8a;
+  --color-table-header: #d3e4f0;
+  --color-table-row: #edf6fa;
+  --color-table-text: #1f2d3d;
+  --color-modal-bg: #fefefe;
+  --color-modal-header: #d3e4f0;
+  --color-modal-text: #1f2d3d;
+  --color-modal-button-main: #10b981;
+  --color-modal-button-cancel: #e2e8f0;
+  --color-btn-confirm-bg: #0ea5e9;
+  --color-btn-confirm-text: #ffffff;
+  --color-btn-confirm-hover: #0284c7;
+}
+.dark {
+  --color-sidebar: #1a2329;
+  --color-sidebar-text: #e2e8f0; /* خاکستری روشن */
+  --color-sidebar-hover: #2c3b45; /* هاور ملایم تیره */
+  --color-panel-highlight: #374151; /* آبی تیره و معتبر */
+  --color-toggle-button: #34d399; /* آبی ملایم‌تر */
+  --color-stat-card: #3f3f46;
+  --color-stat-title: #facc15;
+  --color-stat-value: #ffffff;
+  --color-bg: #1e293b;
+  --color-text: #d3dbde;
+  --color-new-bg: #253038;
+  /* --color-text: #e5e7eb; */
+  --color-otp-background: #2b3634;
+  --color-otp: #1b1211d3;
+  --color-otp-label: #cfe3e0;
+  --color-otp-input: #647067;
+  --color-otp-input-text: #f0f5f4;
+  --color-otp-button: #0f7567;
+  --color-otp-button-text: #faf8f5;
+  --color-otp-input-focus: #e4eded;
+  --color-otp-note: #6bd8ea;
+  --color-completion-window: #0e5c69;
+  --color-completion-btn: #94c2c4;
+  --color-completion-btn-text: #032423;
+  --color-completion-title: #f0f4f1;
+  --color-menu-top: #164e63;
+  --color-primary: #38bdf8;
+  --color-primary-light: #1e3a8a;
+  --color-secondary: #a78bfa;
+  --color-surface: #334155;
+  --color-border: #475569;
+  --color-error: #f87171;
+  --color-success: #4ade80;
+  --color-warning: #facc15;
+  --color-muted: #94a3b8;
+  --color-hover: #1e293b;
+  --color-hover-dark: #60a5fa;
+  --color-input-bg: #334155;
+  --color-li-bg-hover: #1e3a8a;
+  --color-li-bg-dark-hover: #1e40af;
+  /* --color-completion-window; */
+  --color-table-header: #2e3b47;
+  --color-table-row: #384551;
+  --color-table-text: #e2e8f0;
+  --color-modal-bg: #2a333c;
+  --color-modal-header: #3a4754;
+  --color-modal-text: #f1f5f9;
+  --color-modal-button-main: #34d399;
+  --color-modal-button-cancel: #475569;
+  --color-btn-confirm-bg: #38bdf8;
+  --color-btn-confirm-text: #1e293b;
+  --color-btn-confirm-hover: #0ea5e9;
+}
+
+@layer components {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+  }
+  .container2 {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+  }
+
+  .card {
+    @apply bg-surface text-text shadow-md rounded-xl p-4;
+  }
+
+  .input-field {
+    @apply bg-otp-input text-otp-input-text py-1 rounded-2xl font-semibold focus:outline-none focus:border focus:border-otp-input-focus;
+  }
+
+  .btn {
+    @apply rounded-xl px-4 py-2 font-bold shadow-md cursor-pointer transition-all hover:scale-105 duration-300 bg-btn-default;
+  }
+  .btn--confirm {
+    @apply rounded-xl px-4 py-2 font-bold shadow-md cursor-pointer transition-all hover:scale-105 duration-300 bg-btn-confirm-bg text-btn-confirm-text hover:bg-btn-confirm-hover w-full;
+  }
+  .btn--primary {
+    @apply bg-otp-button text-otp-button-text;
+  }
+  .btn--dark {
+    @apply rounded-b-full;
+  }
+  .btn--secondary {
+    @apply px-2 py-1 font-normal;
+  }
+  .btn--completion {
+    @apply shadow-md bg-completion-btn text-completion-btn-text text-xl;
+  }
+  .table-header {
+    background-color: var(--color-table-header);
+    color: var(--color-table-text);
+    @apply text-sm font-semibold;
+  }
+
+  .table-row {
+    background-color: var(--color-table-row);
+    color: var(--color-table-text);
+    @apply text-sm transition-colors;
+  }
+}
+
+table th {
+  padding: 0.7rem 0.7rem;
+  font-size: 0.9rem;
+}
+
+table td {
+  padding: 0.7rem 0.7rem;
+  font-size: 0.83rem;
+  border-bottom: 1px solid #a6bcb9;
+}
+
+.rti--container {
+  background-color: var(--color-otp-input) !important;
+  color: rgba(19, 20, 20, 0.74) !important;
+  padding-top: 0.25rem !important; /* py-1 = 4px */
+  padding-bottom: 0.25rem !important;
+
+  border-radius: 1rem !important; /* rounded-2xl = 16px */
+
+  font-weight: 600 !important; /* font-semibold */
+
+  outline: none !important;
+}
+.custom-input:focus {
+  border: 1px solid var(--otp-input-focus) !important; /* فرض بر اینکه متغیر CSS تعریف شده */
+}
+/* py-1 rounded-2xl font-semibold focus:outline-none focus:border focus:border-otp-input-focus; */
+
+.rti--input {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+} */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* @layer base {
+  :root {
+    &,
+    &.light {
+      --background-app-rgb: 255, 255, 255;
+      --color-primary-900: 74, 109, 255;
+      --color-primary-800: 92, 124, 255;
+      --color-primary-700: 110, 138, 255;
+      --color-primary-600: 128, 153, 255;
+      --color-primary-500: 146, 167, 255;
+      --color-primary-400: 164, 182, 255;
+      --color-primary-300: 183, 197, 255;
+      --color-primary-200: 201, 211, 255;
+      --color-primary-100: 219, 226, 255;
+      --color-primary-50: 228, 233, 255;
+      --color-secondary-900: 17, 24, 39;
+      --color-secondary-800: 31, 41, 55;
+      --color-secondary-700: 55, 65, 81;
+      --color-secondary-600: 75, 85, 99;
+      --color-secondary-500: 107, 114, 128;
+      --color-secondary-400: 156, 163, 175;
+      --color-secondary-300: 209, 213, 219;
+      --color-secondary-200: 229, 231, 235;
+      --color-secondary-100: 243, 244, 246;
+      --color-secondary-50: 249, 250, 251;
+      --color-secondary-0: 255, 255, 255;
+    }
+    &.dark {
+      --color-secondary-900: 249, 250, 251;
+      --color-secondary-800: 243, 244, 246;
+      --color-secondary-700: 229, 231, 235;
+      --color-secondary-600: 209, 213, 219;
+      --color-secondary-500: 156, 163, 175;
+      --color-secondary-400: 107, 114, 128;
+      --color-secondary-300: 75, 85, 99;
+      --color-secondary-200: 55, 65, 81;
+      --color-secondary-100: 31, 41, 55;
+      --color-secondary-50: 17, 24, 39;
+      --color-secondary-0: 24, 33, 47;
+      --backdrop-color: 0, 0, 0;
+    }
+  }
+} */
+
+/* :root {
+  --color-midnight: #121063;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+  --color-success: #198754;
+  --color-warning: #ffc107;
+  --color-error: #dc3545;
+} */
+
+/* @layer utilities {
+  .bg-midnight {
+    background-color: var(--color-midnight);
+  }
+  .text-tahiti {
+    color: var(--color-tahiti);
+  }
+  .text-success {
+    color: var(--color-success);
+  }
+  .bg-warning {
+    background-color: var(--color-warning);
+  }
+  .text-error {
+    color: var(--color-error);
+  }
+} */
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+/* 
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+/* اضافه شده از ...######********************************************************************##### */
+/* ==== فونت Vazirmatn ==== */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+:root {
+  font-family: "Vazirmatn", sans-serif;
+}
+
+/* ==== کامپوننت‌ها ==== */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-semibold px-4 py-2 rounded-xl transition-all duration-300 hover:opacity-90;
+  }
+
+  .input {
+    @apply bg-white dark:bg-surface border border-border rounded-lg px-3 py-2 text-text focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .text-title {
+    @apply text-2xl font-bold text-black dark:text-primary;
+  }
+
+  .badge-success {
+    @apply bg-success text-white px-2 py-1 rounded-full text-sm;
+  }
+
+  .badge-error {
+    @apply bg-error text-white px-2 py-1 rounded-full text-sm;
+  }
+
+  .badge-warning {
+    @apply bg-warning text-white px-2 py-1 rounded-full text-sm;
+  }
+}
+
+/* ==== کلاس‌های مکمل برای استفاده راحت‌تر در کامپوننت‌ها ==== */
+@layer components {
+  .li-hover {
+    @apply hover:bg-[var(--color-li-bg-hover)] dark:hover:bg-[var(--color-li-bg-dark-hover)] transition-colors duration-200;
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  .input-otp {
+    @apply bg-[var(--color-input-bg)] text-text border border-border rounded-xl px-3 py-2 text-center font-bold;
+  }
+
+  .nav-link {
+    @apply px-3 py-2 rounded-md hover:bg-[var(--color-hover)] dark:hover:bg-[var(--color-hover-dark)] text-text;
+  }
+
+  .section-title {
+    @apply text-3xl font-extrabold text-primary mb-4;
+  }
+}
