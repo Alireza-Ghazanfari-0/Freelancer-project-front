@@ -73,3 +73,4 @@ You can login with any phone number, but the following are pre-configured:
 
 Thank you 🙌 | با تشکر 🙌  
 **Alireza Ghazanfari**
+alireza.ghazanfari@yahoo.com
