@@ -114,7 +114,7 @@ function AddNewProject({ setOpenWindow, project = {} }) {
         <div>
           <div className="block mb-4 text-modal-text font-semibold">تگ ها</div>
           {/* <TagsInput */}
-            <Input
+            <input
             value={tags}
             onChange={setTags}
             name="tags"
