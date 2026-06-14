@@ -26,7 +26,7 @@ After registration and profile completion, admin approval is required.
 
 ## 🔗 Live URLs | لینک‌های مهم
 
-- 🌐 Frontend Website: [freelancer-application.liara.run](https://freelancer-application.liara.run/)
+- 🌐 Frontend Website: [freelancer-web-application.netlify.app](https://freelancer-web-application.netlify.app/)
 - 💻 Frontend Repo: [GitHub](https://github.com/Alireza-Ghazanfari-0/Freelancer-project-front)
 
 - 🧠 Backend Repo: [GitHub](https://github.com/Alireza-Ghazanfari-0/Freelancer-project-backend)
