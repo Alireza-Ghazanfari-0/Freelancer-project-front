@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import SelectionField from "../../ui/SelectionField";
-import { TagsInput } from "react-tag-input-component";
+// import { TagsInput } from "react-tag-input-component";
 import DatePickerField from "../../ui/DatePickerField";
 import useCategories from "../categories/useCategories";
 import useAddNewProject from "../projects/useAddNewProject";
@@ -113,7 +113,8 @@ function AddNewProject({ setOpenWindow, project = {} }) {
         />
         <div>
           <div className="block mb-4 text-modal-text font-semibold">تگ ها</div>
-          <TagsInput
+          {/* <TagsInput */}
+            <Input
             value={tags}
             onChange={setTags}
             name="tags"
